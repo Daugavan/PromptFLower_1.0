@@ -2,6 +2,8 @@
 
 PromptFlower 1.0
 
+![PromptFlower01_readme](https://github.com/user-attachments/assets/4d9d19d6-7988-4599-8e62-4fa50d66d1de)
+
 What the tool is:
 
 PrompFlower 1.0 is a command-line tool that generates AI prompts entirely locally and offline using a local AI engine via Ollama. This means that no data is sent to external servers, making it a private and secure tool for creating effective prompts directly on your device.
