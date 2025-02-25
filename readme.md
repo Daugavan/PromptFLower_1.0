@@ -28,13 +28,10 @@ If that doesn't work try ".\PrompFlower 1.0.exe --web"
 
 A link will be generated, and all you have to do is visit it through your web browser.
 
-![PromptFlower01_readme](https://github.com/user-attachments/assets/4d9d19d6-7988-4599-8e62-4fa50d66d1de)
-
-
-**** **** **** ****
-
 http://127.0.0.1:5000
 
 2025-02-25 19:07 - FINAL PUSH - YAY! ^^
+
+![PromptFlower01_readme](https://github.com/user-attachments/assets/4d9d19d6-7988-4599-8e62-4fa50d66d1de)
 
 **** **** **** ****
