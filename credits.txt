@@ -1,0 +1,13 @@
+This project is made possible thanks to:
+
+Marcus Pettersson - I am the creator of PromptFlower 1.0
+Ben Hylak - For explaining how to structure the prompts.
+Ollama – Enabling local AI management.
+ChatGPT – Assisted in script development.
+Deepseek R1 – Contributed to parts of the script.
+Python – The programming language the tool is written in.
+GitHub – Hosting platform for version control and collaboration.
+
+https://daugavan.github.io/
+https://daugavan.github.io/
+https://daugavan.github.io/
