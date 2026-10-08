@@ -20,9 +20,9 @@ Author: [Your Name]
 import sys
 import time
 
-# -------------------------------------------------------------------
-# ASCII-ART (Retro-Futuristic Banner)
-# -------------------------------------------------------------------
+
+
+
 banner_english = r"""
  ▗▄▄▖ ▗▄▄▖  ▗▄▖ ▗▖  ▗▖▗▄▄▖▗▄▄▄▖
 ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌▐▛▚▞▜▌▐▌ ▐▌ █  
@@ -47,23 +47,23 @@ banner_swedish = r"""
 ▐▌   ▐▙▄▄▖▝▚▄▞▘▐▙█▟▌▐▙▄▄▖▐▌ ▐▌                                                                 
 """
 
-# ANSI escape codes for coloring and styling
+
 RESET = "\033[0m"
 BOLD = "\033[1m"
 DIM = "\033[2m"
 ITALIC = "\033[3m"
 UNDERLINE = "\033[4m"
 
-# Retro-inspired color palette
+
 COLOR_CYAN = "\033[36m"
 COLOR_MAGENTA = "\033[35m"
 COLOR_YELLOW = "\033[33m"
 COLOR_BLUE = "\033[34m"
 COLOR_GREEN = "\033[32m"
 
-# -------------------------------------------------------------------
-# Language Data (Menus, Banners, Base Prompts)
-# -------------------------------------------------------------------
+
+
+
 LANG_DATA = {
     "english": {
         "banner": banner_english + f"\n{DIM}A Retro-Futuristic Prompt Generator{RESET} v2.0\n",
@@ -292,9 +292,9 @@ LANG_DATA = {
     }
 }
 
-# -------------------------------------------------------------------
-# Utility Functions
-# -------------------------------------------------------------------
+
+
+
 
 def clear_console():
     """Clear the console screen."""
@@ -348,7 +348,7 @@ def fill_prompt(language_choice, category, answers):
     """
     base_prompt = LANG_DATA[language_choice]["base_prompts"][category]
 
-    # Depending on the category, replace placeholders:
+    
     if category == "1":
         final_prompt = base_prompt.replace("[SkillOrTopic]", answers.get("Q1", ""))
         final_prompt = final_prompt.replace("[Timeframe]", answers.get("Q2", ""))
@@ -382,7 +382,7 @@ def fill_prompt(language_choice, category, answers):
         if answers.get("Q2"):
             final_prompt += f"\nFocus areas: {answers.get('Q2', '')}"
     else:
-        final_prompt = base_prompt  # fallback if no recognized category
+        final_prompt = base_prompt  
 
     return final_prompt
 
@@ -392,37 +392,37 @@ def show_progress_bar(duration=80, steps=100):
     Displays a console progress bar that goes from 0 to 100% in the specified duration.
     """
     interval = duration / steps
-    bar_length = 50  # Length of the progress bar in characters
+    bar_length = 50  
     for i in range(steps + 1):
-        progress = i  # percentage value (0 to 100)
+        progress = i  
         filled_length = int(bar_length * i / steps)
         bar = '#' * filled_length + '-' * (bar_length - filled_length)
-        # Skriver ut uppdaterad progressionsrad
+        
         sys.stdout.write(f'\rProgression: {progress}% |{bar}|')
         sys.stdout.flush()
         time.sleep(interval)
-    print()  # Radbrytning efter färdig progressbar
+    print()  
 
 
 def generate_prompt(language_choice, category):
     """Asks clarifying questions, then shows the final tailored prompt."""
     lang_dict = LANG_DATA[language_choice]
 
-    # Print the selected prompt title
+    
     print(f"{BOLD}{lang_dict['prompt_titles'][category]}{RESET}\n")
 
-    # 1) Ask for clarifying questions
+    
     answers = ask_clarifying_questions(language_choice, category)
     print()
 
-    # 2) Fill the base prompt with user answers
+    
     final_prompt = fill_prompt(language_choice, category, answers)
 
-    # 3) Visa progressionsbaren innan den slutgiltiga prompten skrivs ut
+    
     print("\nGenererar din prompt, vänligen vänta...")
     show_progress_bar(duration=3)
 
-    # 4) Show final result
+    
     print(f"\n{BOLD}Your Tailored Prompt:{RESET}")
     print(final_prompt)
 
@@ -430,7 +430,7 @@ def generate_prompt(language_choice, category):
 def main():
     clear_console()
 
-    # Language selection
+    
     language_choice = get_language()
     clear_console()
     print_banner(language_choice)
